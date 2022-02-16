@@ -8,10 +8,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SignInRfComponent } from './sign-in-rf/sign-in-rf.component';
 
 @NgModule({
-  declarations: [AppComponent, SignInComponent],
+  declarations: [AppComponent, SignInComponent, SignInRfComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     MatCheckboxModule,
     MatFormFieldModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
