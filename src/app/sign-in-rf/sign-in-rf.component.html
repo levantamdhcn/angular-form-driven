@@ -5,12 +5,20 @@
       <mat-form-field appearance="outline">
         <mat-label>Username</mat-label>
         <input matInput placeholder="Username" formControlName="username"/>
+        <mat-error *ngIf="signInForm.get('username')?.errors">
+          <span *ngIf="signInForm.get('username')?.errors?.['required']">This field is required !</span>
+          <span *ngIf="signInForm.get('username')?.errors?.['pattern']">Username is invalid !</span>
+        </mat-error>
       </mat-form-field>
     </div>
     <div class="row-control">
       <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
         <input type="password" matInput placeholder="Password" formControlName="password"/>
+        <mat-error *ngIf="signInForm.get('password')?.errors">
+          <span *ngIf="signInForm.get('password')?.errors?.['required']">This field is required !</span>
+          <span *ngIf="signInForm.get('password')?.errors?.['pattern']">Username is invalid !</span>
+        </mat-error>
       </mat-form-field>
     </div>
     <div class="row-control">
@@ -19,6 +27,7 @@
     <div class="row-control row-actions">
       <button mat-raised-button color="primary" type="submit">Sign in</button>
     </div>
-    <pre>{{ signInForm.value | json }}</pre>
+    <pre>{{ signInForm?.value | json }}</pre>
+    <pre>{{ signInForm.get("username")?.errors | json }}</pre>
   </form>
 </div>
