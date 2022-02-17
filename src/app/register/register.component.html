@@ -1,0 +1,38 @@
+<div class="container">
+  <form class="register-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <h2>Register</h2>
+    <div class="row-control">
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" formControlName="username" >
+        <mat-error *ngIf="registerForm.errors">
+          <span *ngIf="registerForm.get('username')?.errors?.['required']">This field is required !</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row-control">
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput placeholder="Password" formControlName=""password>
+        <mat-error *ngIf="registerForm.errors">
+          <span *ngIf="registerForm.get('password')?.errors?.['required']">This field is required !</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row-control">
+      <mat-form-field appearance="outline">
+        <mat-label>Confirm Password</mat-label>
+        <input type="password" matInput placeholder="Confirm Password" formControlName="passwordConfirm" />
+        <mat-error *ngIf="registerForm.errors">
+          <span *ngIf="registerForm.get('passwordConfirm')?.errors?.['required']">This field is required !</span>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row-control row-actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">
+        Register
+      </button>
+    </div>
+  </form>
+</div>
+

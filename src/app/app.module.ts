@@ -10,9 +10,10 @@ import { AppComponent } from './app.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignInRfComponent } from './sign-in-rf/sign-in-rf.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
-  declarations: [AppComponent, SignInComponent, SignInRfComponent],
+  declarations: [AppComponent, SignInComponent, SignInRfComponent, RegisterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
